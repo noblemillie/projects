@@ -23,3 +23,13 @@ io.on('connection', function (socket) {
     console.log(data);
   });
 });
+
+const feathers = require('feathers');
+const socketio = require('feathers-socketio');
+
+const app = feathers().configure(socketio());
+
+app.listen(3030);
+
+var Server = require('socket.io');
+var io = new Server();
